@@ -14,7 +14,7 @@ import com.udacity.gradle.builditbigger.backend.myApi.model.MyBean;
 
 import java.io.IOException;
 
-class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi mJokeApi = null;
     @SuppressLint("StaticFieldLeak")
     private Context mContext;
