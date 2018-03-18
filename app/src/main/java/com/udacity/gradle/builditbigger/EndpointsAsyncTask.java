@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.example.android.myandroidjokes.JokeActivity;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
-import com.udacity.gradle.builditbigger.backend.myApi.model.MyBean;
 
 import java.io.IOException;
 
@@ -18,7 +16,6 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi mJokeApi = null;
     @SuppressLint("StaticFieldLeak")
     private Context mContext;
-    private InterstitialAd mInterstitialAd;
 
     public EndpointsAsyncTask(Context context) {
         this.mContext = context;
@@ -35,11 +32,11 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
         if (mJokeApi == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/");
+                    .setRootUrl("http://localhost:8080/_ah/api/");
             mJokeApi = builder.build();
         }
         try {
-            return mJokeApi.sendJoke(new MyBean()).execute().getData();
+            return mJokeApi.sayHi(new com.udacity.gradle.builditbigger.backend.myApi.model.MyBean()).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
