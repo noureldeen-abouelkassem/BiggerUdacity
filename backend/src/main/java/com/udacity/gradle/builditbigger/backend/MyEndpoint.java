@@ -18,8 +18,8 @@ public class MyEndpoint {
 
     /** A simple endpoint method that takes a name and says Hi back */
     @ApiMethod(name = "sayHi")
-    public MyBean sayHi(MyBean myClass) {
-        return myClass;
+    public MyBean sayHi() {
+        return new MyBean();
     }
 
 }

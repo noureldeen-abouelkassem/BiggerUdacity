@@ -24,10 +24,6 @@
    "httpMethod": "POST",
    "id": "myApi.sayHi",
    "path": "sayHi",
-   "request": {
-    "$ref": "MyBean",
-    "parameterName": "resource"
-   },
    "response": {
     "$ref": "MyBean"
    },

@@ -36,7 +36,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             mJokeApi = builder.build();
         }
         try {
-            return mJokeApi.sayHi(new com.udacity.gradle.builditbigger.backend.myApi.model.MyBean()).execute().getData();
+            return mJokeApi.sayHi().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
