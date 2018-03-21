@@ -45,8 +45,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     endpointsServer project(path: ':backend', configuration: 'endpoints')
-    implementation project(':MyJokes')
-    implementation project(':backend')
     implementation project(':myandroidjokes')
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support:animated-vector-drawable:27.1.0'
